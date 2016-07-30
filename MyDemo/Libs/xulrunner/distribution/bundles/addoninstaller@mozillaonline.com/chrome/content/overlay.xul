@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!--
+ - Copyright (c) 2010 Appcoast Ltd. All rights reserved.
+ -->
+
+<?xml-stylesheet type="text/css"
+  href="chrome://addoninstaller/skin/overlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM "chrome://addoninstaller/locale/locale.dtd">
+
+<overlay id="addon-installer-browser-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://addoninstaller/content/common.js" />
+  <script type="application/x-javascript"
+    src="chrome://addoninstaller/content/overlay.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="addon-installer-string-bundle"
+      src="chrome://addoninstaller/locale/locale.properties" />
+  </stringbundleset>
+
+</overlay>
