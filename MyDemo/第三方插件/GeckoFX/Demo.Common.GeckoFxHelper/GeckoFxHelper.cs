@@ -15,7 +15,7 @@ namespace Demo.Common.GeckoFxHelper
             _geckoWebBrowser = geckoWebBrowser;
         }
 
-
+         
         #region 测试方法区
         /// <summary>
         /// 全局环境设置

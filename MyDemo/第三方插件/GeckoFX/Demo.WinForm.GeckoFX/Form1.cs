@@ -74,7 +74,6 @@ namespace Demo.WinForm.GeckoFX
 
         private void Begin_Btn_Click(object sender, EventArgs e)
         {
-           
             timer.Start();
         }
 
