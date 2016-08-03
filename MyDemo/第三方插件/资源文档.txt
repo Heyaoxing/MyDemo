@@ -1,2 +1,0 @@
-
-xulrunner文件下载地址:   http://releases.mozilla.org/pub/xulrunner/releases/

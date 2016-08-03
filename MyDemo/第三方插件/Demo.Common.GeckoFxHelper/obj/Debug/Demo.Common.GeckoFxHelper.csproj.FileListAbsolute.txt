@@ -1,7 +1,0 @@
-E:\GitHub\MyDemo\MyDemo\第三方插件\Demo.Common.GeckoFxHelper\bin\Debug\Demo.Common.GeckoFxHelper.dll
-E:\GitHub\MyDemo\MyDemo\第三方插件\Demo.Common.GeckoFxHelper\bin\Debug\Demo.Common.GeckoFxHelper.pdb
-E:\GitHub\MyDemo\MyDemo\第三方插件\Demo.Common.GeckoFxHelper\bin\Debug\Geckofx-Core.dll
-E:\GitHub\MyDemo\MyDemo\第三方插件\Demo.Common.GeckoFxHelper\bin\Debug\Geckofx-Winforms.dll
-E:\GitHub\MyDemo\MyDemo\第三方插件\Demo.Common.GeckoFxHelper\obj\Debug\ResolveAssemblyReference.cache
-E:\GitHub\MyDemo\MyDemo\第三方插件\Demo.Common.GeckoFxHelper\obj\Debug\Demo.Common.GeckoFxHelper.dll
-E:\GitHub\MyDemo\MyDemo\第三方插件\Demo.Common.GeckoFxHelper\obj\Debug\Demo.Common.GeckoFxHelper.pdb

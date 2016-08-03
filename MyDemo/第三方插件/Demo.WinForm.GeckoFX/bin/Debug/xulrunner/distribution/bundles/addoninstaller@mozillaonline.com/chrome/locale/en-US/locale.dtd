@@ -1,6 +1,0 @@
-<!--
-  - Copyright (c) 2010 Appcoast Ltd. All rights reserved.
-  -->
-
-<!ENTITY addon.installer.loading.dialog.title                     "Loading...">
-<!ENTITY addon.installer.loading.dialog.message                   "Loading...">
