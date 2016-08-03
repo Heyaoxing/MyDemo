@@ -1,0 +1,20 @@
+##
+# Copyright (c) 2010 Appcoast Ltd. All rights reserved.
+##
+
+content   addoninstaller                 chrome/content/
+locale    addoninstaller     en-US       chrome/locale/en-US/
+locale    addoninstaller     zh-CN       chrome/locale/zh-CN/
+locale    addoninstaller     zh-TW       chrome/locale/zh-TW/
+skin      addoninstaller     classic/1.0 chrome/skin/all/
+
+# OS-specific.
+skin      addoninstaller-os  classic/1.0 chrome/skin/unix/
+skin      addoninstaller-os  classic/1.0 chrome/skin/winxp/     os=WINNT
+skin      addoninstaller-os  classic/1.0 chrome/skin/winvista/  os=WINNT osversion>=6
+skin      addoninstaller-os  classic/1.0 chrome/skin/mac/       os=Darwin
+
+# Resources.
+resource  addoninstaller     resources/
+
+overlay chrome://browser/content/browser.xul  chrome://addoninstaller/content/overlay.xul
