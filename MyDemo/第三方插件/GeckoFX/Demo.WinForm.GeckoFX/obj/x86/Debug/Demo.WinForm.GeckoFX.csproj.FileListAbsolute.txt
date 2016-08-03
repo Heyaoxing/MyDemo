@@ -17,10 +17,11 @@ E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\D
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.WinForm.GeckoFX.pdb
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.Common.GeckoFxHelper.dll
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.Common.GeckoFxHelper.pdb
-E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\ResolveAssemblyReference.cache
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\Demo.WinForm.GeckoFX.Form1.resources
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\Demo.WinForm.GeckoFX.Properties.Resources.resources
-E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\GenerateResource.read.1.tlog
-E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\GenerateResource.write.1.tlog
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\Demo.WinForm.GeckoFX.exe
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\Demo.WinForm.GeckoFX.pdb
+E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\Demo.WinForm.GeckoFX.csprojResolveAssemblyReference.cache
+E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\Demo.WinForm.GeckoFX.csproj.GenerateResource.Cache
+E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.WebSites.ZhiHu.dll
+E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.WebSites.ZhiHu.pdb

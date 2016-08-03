@@ -35,6 +35,8 @@ namespace Demo.Common.GeckoFxHelper
             var attribute = documents.GetAttribute("value");  //获取节点属性
             var html = documents.OuterHtml; //获取节点html代码
             var id = documents.Id;//获取节点id
+
+
         }
 
         /// <summary>
@@ -68,6 +70,20 @@ namespace Demo.Common.GeckoFxHelper
         }
 
         /// <summary>
+        /// 通过name设置标签特性值
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="attributeName"></param>
+        /// <param name="content"></param>
+        public void SetAttrElementByNameFirst(string name, string attributeName, string content)
+        {
+            using (var documents = _geckoWebBrowser.Document.GetElementsByName(name)[0])
+            {
+                documents.SetAttribute(attributeName, content);
+            }
+        }
+
+        /// <summary>
         /// 通过id插入textArea内容
         /// </summary>
         /// <param name="id"></param>
@@ -91,6 +107,19 @@ namespace Demo.Common.GeckoFxHelper
             using (var documents = _geckoWebBrowser.Document.GetElementById(id))
             {
                 GeckoButtonElement button = new GeckoButtonElement(documents.DOMElement);
+                button.Click();
+            }
+        }
+
+        /// <summary>
+        /// 通过class触发button按钮点击
+        /// </summary>
+        /// <param name="id"></param>
+        public void BtnClientByClassFirst(string className)
+        {
+            using (var documents = _geckoWebBrowser.Document.GetElementsByClassName(className)[0])
+            {
+                GeckoButtonElement button = new GeckoButtonElement(documents.DomObject);
                 button.Click();
             }
         }

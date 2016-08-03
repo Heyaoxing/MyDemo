@@ -22,10 +22,7 @@ namespace Demo.WinForm.GeckoFX
         /// </summary>
         static private string xulrunnerPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "xulrunner");
 
-        /// <summary>
-        /// 浏览地址
-        /// </summary>
-        static private string testUrl = "http://192.168.4.192:8055/";
+
 
         private GeckoWebBrowser Browser;
 
@@ -38,22 +35,17 @@ namespace Demo.WinForm.GeckoFX
         System.Timers.Timer timer;
         private void Init()
         {
-            timer = new System.Timers.Timer(1000 * 2);
-            timer.Elapsed += new System.Timers.ElapsedEventHandler(Start);//到达时间的时候执行事件；
-            timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
-            timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
-
             Xpcom.Initialize(xulrunnerPath);
-
             #region 初始化 GeckoFx
             Browser = new GeckoWebBrowser();
             Browser.Parent = this;
             Browser.Dock = DockStyle.Fill;
             Gecko.GeckoPreferences.User["gfx.font_rendering.graphite.enabled"] = true;
             GeckoPreferences.Default["extensions.blocklist.enabled"] = false;
-            this.Gecko_Web.Navigate(testUrl);
-            LoginController.Init(this.Gecko_Web);
-            ArticleController.Init(this.Gecko_Web);
+            clearCookie();
+            this.Gecko_Web.Navigate(Demo.WebSites.ZhiHu.WebSiteOperation.IndexUrl);
+
+            Demo.WebSites.ZhiHu.LoginOperation.Init(this.Gecko_Web);
             #endregion
         }
 
@@ -74,6 +66,10 @@ namespace Demo.WinForm.GeckoFX
 
         private void Begin_Btn_Click(object sender, EventArgs e)
         {
+            timer = new System.Timers.Timer(1000 * 4);
+            timer.Elapsed += new System.Timers.ElapsedEventHandler(Start);//到达时间的时候执行事件；
+            timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
+            timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
             timer.Start();
         }
 
@@ -97,24 +93,20 @@ namespace Demo.WinForm.GeckoFX
         {
             this.Invoke(new Action(() =>
             {
-                if (!LoginController.IsGo)
+                if (Demo.WebSites.ZhiHu.LoginOperation.isLogin)
                 {
-                    LoginController.LoginCheck();
+                    Demo.WebSites.ZhiHu.LoginOperation.Login();
                 }
-                else if (!ArticleController.isTitle)
+                else if (Demo.WebSites.ZhiHu.LoginOperation.isScroll)
                 {
-                    ArticleController.Title();
+                    Demo.WebSites.ZhiHu.LoginOperation.Scroll();
                 }
-                else if (!ArticleController.isContent)
+                else
                 {
-                    ArticleController.Content();
-                }
-                else if (!ArticleController.isImage)
-                {
-                    ArticleController.UpLoadImage();
+                    this.Gecko_Web.Navigate("http://www.cnblogs.com/");//可以跳转网页浏览
+                    //Demo.WebSites.ZhiHu.LoginOperation.LoadContent();
                 }
             }));
-
         }
     }
 }

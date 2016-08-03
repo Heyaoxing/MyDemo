@@ -1,13 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_第三方插件", "01_第三方插件", "{7EF4EC22-0C4D-42EF-A3F0-8E70C92CF495}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeckoFX", "GeckoFX", "{DA2D26C5-503A-4C94-B323-E05DBF5607EA}"
+	ProjectSection(SolutionItems) = preProject
+		第三方插件\GeckoFX\资源文档.txt = 第三方插件\GeckoFX\资源文档.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Common.GeckoFxHelper", "第三方插件\GeckoFX\Demo.Common.GeckoFxHelper\Demo.Common.GeckoFxHelper.csproj", "{6D04DB1B-A08D-486C-AA11-5D39173B6541}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WinForm.GeckoFX", "第三方插件\GeckoFX\Demo.WinForm.GeckoFX\Demo.WinForm.GeckoFX.csproj", "{38043EAD-35DC-4A63-B4C8-8E472A61938E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tesseract3", "Tesseract3", "{7D26D0EE-495A-4AE1-BBE5-CB2A1EC80918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WinForm.Tesseract", "第三方插件\Tesseract3\Demo.WinForm.Tesseract\Demo.WinForm.Tesseract.csproj", "{2F5B28D1-9332-4762-94F9-E8B7335E68E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WebSites.ZhiHu", "第三方插件\GeckoFX\Demo.WebSites.ZhiHu\Demo.WebSites.ZhiHu.csproj", "{53B65E7F-6B1A-4B06-A535-878C1F62706C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,13 +50,36 @@ Global
 		{38043EAD-35DC-4A63-B4C8-8E472A61938E}.Release|Mixed Platforms.Build.0 = Release|x86
 		{38043EAD-35DC-4A63-B4C8-8E472A61938E}.Release|x86.ActiveCfg = Release|x86
 		{38043EAD-35DC-4A63-B4C8-8E472A61938E}.Release|x86.Build.0 = Release|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Debug|x86.ActiveCfg = Debug|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Debug|x86.Build.0 = Debug|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Release|Any CPU.ActiveCfg = Release|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Release|x86.ActiveCfg = Release|x86
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2}.Release|x86.Build.0 = Release|x86
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DA2D26C5-503A-4C94-B323-E05DBF5607EA} = {7EF4EC22-0C4D-42EF-A3F0-8E70C92CF495}
+		{7D26D0EE-495A-4AE1-BBE5-CB2A1EC80918} = {7EF4EC22-0C4D-42EF-A3F0-8E70C92CF495}
 		{6D04DB1B-A08D-486C-AA11-5D39173B6541} = {DA2D26C5-503A-4C94-B323-E05DBF5607EA}
 		{38043EAD-35DC-4A63-B4C8-8E472A61938E} = {DA2D26C5-503A-4C94-B323-E05DBF5607EA}
+		{53B65E7F-6B1A-4B06-A535-878C1F62706C} = {DA2D26C5-503A-4C94-B323-E05DBF5607EA}
+		{2F5B28D1-9332-4762-94F9-E8B7335E68E2} = {7D26D0EE-495A-4AE1-BBE5-CB2A1EC80918}
 	EndGlobalSection
 EndGlobal
