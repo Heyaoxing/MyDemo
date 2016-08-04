@@ -9,3 +9,4 @@ E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.Common.GeckoFxHelper\bin\De
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.Common.GeckoFxHelper\bin\Debug\Demo.Common.GeckoFxHelper.pdb
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.Common.GeckoFxHelper\obj\Debug\Demo.Common.GeckoFxHelper.dll
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.Common.GeckoFxHelper\obj\Debug\Demo.Common.GeckoFxHelper.pdb
+E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.Common.GeckoFxHelper\obj\Debug\Demo.Common.GeckoFxHelper.csprojResolveAssemblyReference.cache
