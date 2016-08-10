@@ -25,3 +25,5 @@ E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Deb
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\obj\x86\Debug\Demo.WinForm.GeckoFX.csproj.GenerateResource.Cache
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.WebSites.ZhiHu.dll
 E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.WebSites.ZhiHu.pdb
+E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.WebSites.ShouShang.dll
+E:\GitHub\MyDemo\MyDemo\第三方插件\GeckoFX\Demo.WinForm.GeckoFX\bin\Debug\Demo.WebSites.ShouShang.pdb

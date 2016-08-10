@@ -93,18 +93,13 @@ namespace Demo.WinForm.GeckoFX
         {
             this.Invoke(new Action(() =>
             {
-                if (Demo.WebSites.ZhiHu.LoginOperation.isLogin)
+                if (Demo.WebSites.ShouShang.Registered.IsRegistered)
                 {
-                    Demo.WebSites.ZhiHu.LoginOperation.Login();
-                }
-                else if (Demo.WebSites.ZhiHu.LoginOperation.isScroll)
-                {
-                    Demo.WebSites.ZhiHu.LoginOperation.Scroll();
+                    Demo.WebSites.ShouShang.Registered.SetRegistered();
                 }
                 else
                 {
-                    this.Gecko_Web.Navigate("http://www.cnblogs.com/");//可以跳转网页浏览
-                    //Demo.WebSites.ZhiHu.LoginOperation.LoadContent();
+                    Demo.WebSites.ShouShang.Registered.EditJsCode();
                 }
             }));
         }

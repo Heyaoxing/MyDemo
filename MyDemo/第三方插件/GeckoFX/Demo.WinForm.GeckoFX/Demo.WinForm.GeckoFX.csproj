@@ -93,6 +93,10 @@
       <Project>{6D04DB1B-A08D-486C-AA11-5D39173B6541}</Project>
       <Name>Demo.Common.GeckoFxHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Demo.WebSites.ShouShang\Demo.WebSites.ShouShang.csproj">
+      <Project>{ece1f050-834f-4119-928a-222ca0b8d41a}</Project>
+      <Name>Demo.WebSites.ShouShang</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.WebSites.ZhiHu\Demo.WebSites.ZhiHu.csproj">
       <Project>{53b65e7f-6b1a-4b06-a535-878c1f62706c}</Project>
       <Name>Demo.WebSites.ZhiHu</Name>

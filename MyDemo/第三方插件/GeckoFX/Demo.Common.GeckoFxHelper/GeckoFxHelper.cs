@@ -15,14 +15,13 @@ namespace Demo.Common.GeckoFxHelper
             _geckoWebBrowser = geckoWebBrowser;
         }
 
-         
+
         #region 测试方法区
         /// <summary>
         /// 全局环境设置
         /// </summary>
         public void Global()
         {
-
         }
 
         /// <summary>
@@ -121,6 +120,21 @@ namespace Demo.Common.GeckoFxHelper
             {
                 GeckoButtonElement button = new GeckoButtonElement(documents.DomObject);
                 button.Click();
+            }
+        }
+
+
+        public void EditJsCodebyContains() //string filname, string containsContent, string editContent
+        {
+            using (var document = _geckoWebBrowser.Document.GetElementsByClassName("touclick-ck-image")[0])
+            {
+                GeckoImageElement button = new GeckoImageElement(document.DomObject);
+                button.Height = 12;
+                button.Width = 12;
+                button.Click();
+                button.Click();
+
+
             }
         }
         #endregion
