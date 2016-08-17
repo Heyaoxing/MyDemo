@@ -95,6 +95,10 @@
       <Project>{6D04DB1B-A08D-486C-AA11-5D39173B6541}</Project>
       <Name>Demo.Common.GeckoFxHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Demo.Test.Greetest\Demo.Test.Greetest.csproj">
+      <Project>{11543ab7-8afd-4594-99f2-13a532a25f0e}</Project>
+      <Name>Demo.Test.Greetest</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.WebSites.ShouShang\Demo.WebSites.ShouShang.csproj">
       <Project>{ece1f050-834f-4119-928a-222ca0b8d41a}</Project>
       <Name>Demo.WebSites.ShouShang</Name>

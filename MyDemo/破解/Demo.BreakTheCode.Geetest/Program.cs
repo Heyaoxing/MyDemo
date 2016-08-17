@@ -15,10 +15,10 @@ namespace Demo.BreakTheCode.Geetest
         {
             try
             {
-                Image bg = LoadImage("http://static.geetest.com/pictures/gt/496156f80/bg/2a177eca.jpg");
-                Image full = LoadImage("http://static.geetest.com/pictures/gt/496156f80/496156f80.jpg");
-                bg = AlignImage(bg, 26);
-                full = AlignImage(full, 26);
+                Image bg = LoadImage("http://static.geetest.com/pictures/gt/496156f80/bg/4d6b7f65.jpg");//http://static.geetest.com/pictures/gt/aec181a90/bg/010e7996.jpg
+                Image full = LoadImage("http://static.geetest.com/pictures/gt/496156f80/496156f80.jpg"); 
+                bg = AlignImage(bg, 0);
+                full = AlignImage(full, 0);
                 int xpos = GetPositionX(bg, full);
                 Console.WriteLine(xpos);
 

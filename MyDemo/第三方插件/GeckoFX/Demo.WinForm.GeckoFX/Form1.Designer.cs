@@ -60,7 +60,7 @@ namespace Demo.WinForm.GeckoFX
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 442);
+            this.textBox1.Location = new System.Drawing.Point(12, 444);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace Demo.WinForm.GeckoFX
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(250, 442);
+            this.textBox2.Location = new System.Drawing.Point(130, 444);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 3;
@@ -82,6 +82,7 @@ namespace Demo.WinForm.GeckoFX
             this.Next_Btn.Text = "下一步";
             this.Next_Btn.UseVisualStyleBackColor = true;
             this.Next_Btn.Click += new System.EventHandler(this.Next_Btn_Click);
+         
             // 
             // Form1
             // 

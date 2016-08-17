@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BaseOperation.cs" />
     <Compile Include="GeckoFxHelper.cs" />
+    <Compile Include="GeckoEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

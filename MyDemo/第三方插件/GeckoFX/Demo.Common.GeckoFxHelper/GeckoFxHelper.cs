@@ -123,6 +123,69 @@ namespace Demo.Common.GeckoFxHelper
             }
         }
 
+        /// <summary>
+        /// 获取元素特性值
+        /// </summary>
+        /// <param name="dom"></param>
+        /// <param name="className"></param>
+        /// <param name="attrElement"></param>
+        /// <returns></returns>
+        public string GetDomAttrByClassFirst(GeckoEnum.HtmlDom dom, string className, string attrElement)
+        {
+            string attribute = string.Empty;
+            using (var documents = _geckoWebBrowser.Document.GetElementsByClassName(className)[0])
+            {
+                GeckoHtmlElement element = null;
+                switch (dom)
+                {
+                    case GeckoEnum.HtmlDom.Div:
+                        element = new GeckoDivElement(documents.DomObject);
+                        break;
+                }
+
+                if (element != null)
+                {
+                    attribute = element.GetAttribute(attrElement);
+                }
+            }
+            return attribute;
+        }
+
+        /// <summary>
+        /// 向页面中添加内容（样式、脚本等）
+        /// </summary>
+        /// <param name="content">要添加的内容</param>
+        /// <param name="type">内容类型（“text/javascript”、“text/css”）</param>
+        /// <param name="tagName">添加的标签名（link,script,body,div....）</param>
+        /// <param name="appendTagName">在页面中被追加的元素（head/body...），如果目标有多个，则默认取第一个，若不填，则默认为body</param>
+        public void RegString(string content, string type, string tagName, string appendTagName)
+        {
+            try
+            {
+                if (content == null || content.Length <= 0)
+                {
+                    return;
+                }
+                appendTagName = (appendTagName == null || appendTagName.Length <= 0 ? "body" : appendTagName);
+                GeckoHtmlElement he = (GeckoHtmlElement)_geckoWebBrowser.Document.CreateElement(tagName);
+                he.SetAttribute("type", type);
+                he.InnerHtml = content;
+                // he.SetAttribute("text", content);
+                GeckoElementCollection hec = _geckoWebBrowser.Document.GetElementsByTagName(appendTagName);
+                if (hec != null && hec.Length > 0)
+                {
+                    hec[0].AppendChild(he);
+                    //wb.Document.StyleSheets
+                }
+                else
+                {
+
+                    _geckoWebBrowser.Document.Body.AppendChild(he);
+
+                }
+            }
+            catch { }
+        }
 
         public void EditJsCodebyContains() //string filname, string containsContent, string editContent
         {
@@ -137,6 +200,22 @@ namespace Demo.Common.GeckoFxHelper
 
             }
         }
+
+
+        /// <summary>
+        /// 根据class判断是否存在该元素
+        /// </summary>
+        /// <param name="className"></param>
+        /// <returns></returns>
+        public bool ExistsElementByClass(string className)
+        {
+            bool result = false;
+            var documents = _geckoWebBrowser.Document.GetElementsByClassName(className);
+            if (documents.Length>0)
+                    result = true;
+            return result;
+        }
+
         #endregion
     }
 }

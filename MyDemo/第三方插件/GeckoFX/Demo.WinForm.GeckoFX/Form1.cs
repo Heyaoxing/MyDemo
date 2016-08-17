@@ -5,13 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
 using Demo.Common.GeckoFxHelper;
+using Demo.Test.Greetest;
 using Demo.WinForm.GeckoFX.Controller;
 using Gecko;
+using Gecko.Windows;
 
 namespace Demo.WinForm.GeckoFX
 {
@@ -43,9 +46,11 @@ namespace Demo.WinForm.GeckoFX
             Gecko.GeckoPreferences.User["gfx.font_rendering.graphite.enabled"] = true;
             GeckoPreferences.Default["extensions.blocklist.enabled"] = false;
             clearCookie();
-            this.Gecko_Web.Navigate(Demo.WebSites.ZhiHu.WebSiteOperation.IndexUrl);
+            this.Gecko_Web.Navigate(Demo.Test.Greetest.WebSiteOperation.IndexUrl);
 
-            Demo.WebSites.ZhiHu.LoginOperation.Init(this.Gecko_Web);
+            // Demo.WebSites.ZhiHu.LoginOperation.Init(this.Gecko_Web);
+
+            Demo.Test.Greetest.BreakCode.Init(this.Gecko_Web);
             #endregion
         }
 
@@ -66,12 +71,18 @@ namespace Demo.WinForm.GeckoFX
 
         private void Begin_Btn_Click(object sender, EventArgs e)
         {
-            timer = new System.Timers.Timer(1000 * 4);
+            TimeInit();
+        }
+
+        private void TimeInit()
+        {
+            timer = new System.Timers.Timer(1000 * 5);
             timer.Elapsed += new System.Timers.ElapsedEventHandler(Start);//到达时间的时候执行事件；
             timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
             timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
             timer.Start();
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -89,18 +100,14 @@ namespace Demo.WinForm.GeckoFX
         }
 
 
+
         private void Start(object evg, System.Timers.ElapsedEventArgs e)
         {
             this.Invoke(new Action(() =>
             {
-                if (Demo.WebSites.ShouShang.Registered.IsRegistered)
-                {
-                    Demo.WebSites.ShouShang.Registered.SetRegistered();
-                }
-                else
-                {
-                    Demo.WebSites.ShouShang.Registered.EditJsCode();
-                }
+               var result= BreakCode.RunBreakCode();
+                if(result)
+                     timer.Stop();
             }));
         }
     }
