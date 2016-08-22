@@ -1,0 +1,10 @@
+﻿{
+  "name": "demo.console.node-js",
+  "version": "0.0.0",
+  "description": "Demo.Console.NodeJs",
+  "main": "server.js",
+  "author": {
+    "name": "pc",
+    "email": ""
+  }
+}
