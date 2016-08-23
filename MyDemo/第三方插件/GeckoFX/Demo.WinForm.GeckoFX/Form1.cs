@@ -10,11 +10,9 @@ using System.Text;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
-using Demo.Common.GeckoFxHelper;
 using Demo.Test.Greetest;
-using Demo.WinForm.GeckoFX.Controller;
 using Gecko;
-using Gecko.Windows;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Demo.WinForm.GeckoFX
 {
@@ -46,11 +44,9 @@ namespace Demo.WinForm.GeckoFX
             Gecko.GeckoPreferences.User["gfx.font_rendering.graphite.enabled"] = true;
             GeckoPreferences.Default["extensions.blocklist.enabled"] = false;
             clearCookie();
-            this.Gecko_Web.Navigate(Demo.Test.Greetest.WebSiteOperation.IndexUrl);
+            this.Gecko_Web.Navigate(Demo.WebSites.Alibaba.WebSiteOperation.IndexUrl);
 
-            // Demo.WebSites.ZhiHu.LoginOperation.Init(this.Gecko_Web);
-
-            Demo.Test.Greetest.BreakCode.Init(this.Gecko_Web);
+            Demo.WebSites.Alibaba.Registered.Init(this.Gecko_Web);
             #endregion
         }
 
@@ -67,20 +63,18 @@ namespace Demo.WinForm.GeckoFX
 
         private void Start_Btn_Click(object sender, EventArgs e)
         {
+           
         }
 
         private void Begin_Btn_Click(object sender, EventArgs e)
         {
-            TimeInit();
-        }
 
-        private void TimeInit()
-        {
-            timer = new System.Timers.Timer(1000 * 5);
-            timer.Elapsed += new System.Timers.ElapsedEventHandler(Start);//到达时间的时候执行事件；
-            timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
-            timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
-            timer.Start();
+            Demo.WebSites.Alibaba.Registered.GetObjectProperty();
+            //timer = new System.Timers.Timer(1000 * 4);
+            //timer.Elapsed += new System.Timers.ElapsedEventHandler(Start);//到达时间的时候执行事件；
+            //timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
+            //timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
+            //timer.Start();
         }
 
 
@@ -105,9 +99,6 @@ namespace Demo.WinForm.GeckoFX
         {
             this.Invoke(new Action(() =>
             {
-               var result= BreakCode.RunBreakCode();
-                if(result)
-                     timer.Stop();
             }));
         }
     }

@@ -99,6 +99,10 @@
       <Project>{11543ab7-8afd-4594-99f2-13a532a25f0e}</Project>
       <Name>Demo.Test.Greetest</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Demo.WebSites.Alibaba\Demo.WebSites.Alibaba.csproj">
+      <Project>{73386bb4-fa63-403c-89cc-697c4bb168c7}</Project>
+      <Name>Demo.WebSites.Alibaba</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.WebSites.ShouShang\Demo.WebSites.ShouShang.csproj">
       <Project>{ece1f050-834f-4119-928a-222ca0b8d41a}</Project>
       <Name>Demo.WebSites.ShouShang</Name>
