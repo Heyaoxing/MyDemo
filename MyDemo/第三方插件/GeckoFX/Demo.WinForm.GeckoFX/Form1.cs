@@ -69,7 +69,7 @@ namespace Demo.WinForm.GeckoFX
         private void Begin_Btn_Click(object sender, EventArgs e)
         {
 
-            Demo.WebSites.Alibaba.Registered.GetObjectProperty();
+            Demo.WebSites.Alibaba.Registered.SlideMouse();
             //timer = new System.Timers.Timer(1000 * 4);
             //timer.Elapsed += new System.Timers.ElapsedEventHandler(Start);//到达时间的时候执行事件；
             //timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；

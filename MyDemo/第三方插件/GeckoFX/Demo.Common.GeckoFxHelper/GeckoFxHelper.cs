@@ -187,6 +187,38 @@ namespace Demo.Common.GeckoFxHelper
             catch { }
         }
 
+        public void IframeRegString(string iframeId,string content, string type, string tagName, string appendTagName)
+        {
+            if (content == null || content.Length <= 0)
+            {
+                return;
+            }
+            try
+            {
+                using (var document = _geckoWebBrowser.Document.GetElementById("alibaba-register-box"))
+                {
+                    var iframe = new GeckoIFrameElement(document.DOMElement).ContentDocument;
+
+                    appendTagName = (appendTagName == null || appendTagName.Length <= 0 ? "body" : appendTagName);
+                    GeckoHtmlElement he = (GeckoHtmlElement)iframe.CreateElement(tagName);
+                    he.SetAttribute("type", type);
+                    he.InnerHtml = content;
+                    // he.SetAttribute("text", content);
+                    GeckoElementCollection hec = iframe.GetElementsByTagName(appendTagName);
+                    if (hec != null && hec.Length > 0)
+                    {
+                        hec[0].AppendChild(he);
+                        //wb.Document.StyleSheets
+                    }
+                    else
+                    {
+                        iframe.Body.AppendChild(he);
+                    }
+                }
+            }
+            catch { }
+        }
+
         public void EditJsCodebyContains() //string filname, string containsContent, string editContent
         {
             using (var document = _geckoWebBrowser.Document.GetElementsByClassName("touclick-ck-image")[0])
