@@ -14,7 +14,7 @@
 <#@ assembly name="$(SolutionDir)packages\MySql.Data.6.2.1\MySql.Data.dll" #>
 
 <# 
-     
+      
 
     //当前项目目录
     string projectDir = Host.ResolveAssemblyReference("$(ProjectDir)");
