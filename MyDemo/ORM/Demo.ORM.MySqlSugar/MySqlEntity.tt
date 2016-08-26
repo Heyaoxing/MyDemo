@@ -22,10 +22,10 @@
     //解决方案目录
     string solutionDir = Host.ResolveAssemblyReference("$(SolutionDir)");
 
- 
+
      using (var db = new SqlSugarClient("server=localhost;Uid=root;Pwd=123456;Database=WebsiteSpider_DB;port=3306;charset=utf8"))
      {
-          db.ClassGenerating.CreateClassFiles(db, "E://T4/Models","Models");  
+          db.ClassGenerating.CreateClassFiles(db, Path.Combine(projectDir,"Entity"),"Models");  
 
       };
 #>

@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Demo.Net.StartUpProgram;
 using System.IO;
+using Demo.ORM.MySqlSugar;
+
 namespace Demo.UnitTest.StartUpProgram
 {
     [TestClass]
@@ -10,19 +12,11 @@ namespace Demo.UnitTest.StartUpProgram
         [TestMethod]
         public void TestMethod1()
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestConsole.exe");
-            Demo.Net.StartUpProgram.StartUpProgram startUp = new Net.StartUpProgram.StartUpProgram();
-            // Assert.IsTrue(startUp.Begin(path), "成功!");
-            Demo.Net.StartUpProgram.StartUpProgram.WinExec(path, 3);
-            var count = startUp.GetProgramCount();
-            Assert.IsTrue(true, count.ToString());
+            MySqlSugarDemo mySqlSugar=new MySqlSugarDemo();
+            mySqlSugar.Set();
+            Assert.IsTrue(true);
         }
 
-        [TestMethod]
-        public void TestMethod2()
-        {
-            Demo.Net.ClickBombbox.ClickBomb.Click();
-            Assert.IsTrue(true, "成功");
-        }
+      
     }
 }
