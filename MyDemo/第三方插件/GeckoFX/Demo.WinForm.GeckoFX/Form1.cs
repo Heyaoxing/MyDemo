@@ -44,9 +44,9 @@ namespace Demo.WinForm.GeckoFX
             Gecko.GeckoPreferences.User["gfx.font_rendering.graphite.enabled"] = true;
             GeckoPreferences.Default["extensions.blocklist.enabled"] = false;
             clearCookie();
-            this.Gecko_Web.Navigate(Demo.WebSites.Alibaba.WebSiteOperation.IndexUrl);
+            this.Gecko_Web.Navigate(WebSites.JcNet.URL);
 
-            Demo.WebSites.Alibaba.Registered.Init(this.Gecko_Web);
+            WebSites.JcNet.Init(this.Gecko_Web);
             #endregion
         }
 
@@ -63,13 +63,14 @@ namespace Demo.WinForm.GeckoFX
 
         private void Start_Btn_Click(object sender, EventArgs e)
         {
-           
         }
 
         private void Begin_Btn_Click(object sender, EventArgs e)
         {
 
-            Demo.WebSites.Alibaba.Registered.SlideMouse();
+           var result= WebSites.JcNet.CrackRun();
+
+            // Demo.WebSites.Alibaba.Registered.SlideMouse();
             //timer = new System.Timers.Timer(1000 * 4);
             //timer.Elapsed += new System.Timers.ElapsedEventHandler(Start);//到达时间的时候执行事件；
             //timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
