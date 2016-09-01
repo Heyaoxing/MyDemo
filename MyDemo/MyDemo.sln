@@ -88,8 +88,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WebSites", "第三方�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac", "Autofac", "{74463FA2-2B35-475D-AC30-7FE35DCF0EAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Console.Autofac", "第三方插件\Autofac\Demo.Console.Autofac\Demo.Console.Autofac.csproj", "{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -332,18 +330,6 @@ Global
 		{E67C8D3D-247F-4BE2-9EC7-C74BA6B9E7B5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E67C8D3D-247F-4BE2-9EC7-C74BA6B9E7B5}.Release|x64.ActiveCfg = Release|Any CPU
 		{E67C8D3D-247F-4BE2-9EC7-C74BA6B9E7B5}.Release|x86.ActiveCfg = Release|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Release|x64.ActiveCfg = Release|Any CPU
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -379,6 +365,5 @@ Global
 		{24EAEAC3-DD6F-4CDC-8386-D801E1447EEA} = {726AA640-C46E-425F-A4D1-4E680481EE73}
 		{842E60B7-7B38-4B29-AB5C-846ECA97F10E} = {A3E5BBF7-719B-461C-BB2F-3F4CF3DB7CC2}
 		{BBCBBD99-EA7A-4F06-9A2A-6B58F6A965B1} = {A3E5BBF7-719B-461C-BB2F-3F4CF3DB7CC2}
-		{92041D0E-AD4D-4AC4-B560-0A86284C5DF4} = {74463FA2-2B35-475D-AC30-7FE35DCF0EAD}
 	EndGlobalSection
 EndGlobal
