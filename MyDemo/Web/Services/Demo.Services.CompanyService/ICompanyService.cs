@@ -9,5 +9,7 @@ namespace Demo.Mvc.Services
     public interface ICompanyService
     {
         string Say();
+
+        string SayHello();
     }
 }

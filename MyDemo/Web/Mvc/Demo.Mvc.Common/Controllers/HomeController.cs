@@ -14,6 +14,7 @@ namespace Demo.Mvc.Common.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = _companyReposity.Say();
+            ViewBag.Message = _companyReposity.SayHello();
             return View();
         }
 

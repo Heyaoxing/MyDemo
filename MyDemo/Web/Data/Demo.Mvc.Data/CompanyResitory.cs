@@ -9,9 +9,19 @@ namespace Demo.Mvc.Data
 {
     public class CompanyResitory : ICompanyResitory
     {
+        private string _result = "来自数据层的数据";
+
+        public CompanyResitory()
+        {
+            
+        }
+        public CompanyResitory(string result)
+        {
+            _result = result;
+        }
         public string Select()
         {
-            return "来自数据层的数据";
+            return _result;
         }
     }
 }

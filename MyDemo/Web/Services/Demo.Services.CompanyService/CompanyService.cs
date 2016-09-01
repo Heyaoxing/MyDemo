@@ -11,11 +11,19 @@ namespace Demo.Mvc.Services
     {
         private ICompanyResitory _companyResitory;
 
+        public string key { set; get; }
         public CompanyService(ICompanyResitory companyResitory)
         {
             _companyResitory = companyResitory;
         }
         public string Say()
+        {
+            _companyResitory.Select();
+            _companyResitory.Select();
+            return _companyResitory.Select();
+        }
+
+        public string SayHello()
         {
             return _companyResitory.Select();
         }

@@ -23,7 +23,7 @@ namespace Demo.Mvc.Common
             builder.RegisterControllers(Assembly.GetExecutingAssembly()).PropertiesAutowired();
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-
+            
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -33,13 +33,35 @@ namespace Demo.Mvc.Common
 
         private void SetupResolveRules(ContainerBuilder builder)
         {
+
+            builder.RegisterCallback(cr =>
+            {
+                // 下面的Registered事件相当类型的OnRegistered事件
+                cr.Registered += (sender, eventArgs) =>
+                {
+                    // OnPreparing事件
+                    eventArgs.ComponentRegistration.Preparing += (o, preparingEventArgs) =>
+                    {
+                        System.Diagnostics.Debug.WriteLine("OnPreparing事件!" +o.ToString());
+                    };
+                    // OnActivating事件
+                    eventArgs.ComponentRegistration.Activating += (o, activatingEventArgs) =>
+                    {
+                        System.Diagnostics.Debug.WriteLine("OnActivating事件!");
+                    };
+                    // OnActivated事件
+                    eventArgs.ComponentRegistration.Activated += (o, activatedEventArgs) =>
+                    {
+                        System.Diagnostics.Debug.WriteLine("OnActivated事件!" + activatedEventArgs.Context);
+                    };
+                };
+            });
+
+
             builder.RegisterType<CompanyResitory>().As<ICompanyResitory>();
-            builder.RegisterType<CompanyService>().As<ICompanyService>()
-                        .OnRegistered(e =>System.Diagnostics.Debug.WriteLine("在注册的时候调用!"))
-                        .OnPreparing(e => System.Diagnostics.Debug.WriteLine("在准备创建的时候调用!"))
-                        .OnActivating(e => System.Diagnostics.Debug.WriteLine("在创建之前调用!"))
-                        .OnActivated(e => System.Diagnostics.Debug.WriteLine("创建之后调用!"+e))
-                        .OnRelease(e => System.Diagnostics.Debug.WriteLine("在释放占用的资源之前调用!"));
+
+            builder.RegisterType<CompanyService>().As<ICompanyService>();
+
         }
     }
 }
