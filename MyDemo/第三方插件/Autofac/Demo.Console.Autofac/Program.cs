@@ -21,7 +21,7 @@ namespace Demo.Console.Autofac
             using (IContainer container = builder.Build())
             {
                 AutoFacManager manager = container.Resolve<AutoFacManager>();
-                manager.Select();
+                manager.Say();
             }
 
             System.Console.Read();
@@ -37,9 +37,9 @@ namespace Demo.Console.Autofac
             person = MyPerson;
         }
 
-        public void Select()
+        public void Say()
         {
-            System.Console.WriteLine(person.Select());
+            System.Console.WriteLine(person.Say());
         }
     }
 }

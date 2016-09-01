@@ -9,7 +9,7 @@ namespace Demo.Console.Autofac.Implement
 {
     public class CompanyReposity : ICompanyReposity
     {
-        public string Select()
+        public string Say()
         {
             return "hello";
         }

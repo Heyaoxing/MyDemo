@@ -12,6 +12,6 @@ namespace Demo.Console.Autofac.Interface
         /// 查询
         /// </summary>
         /// <returns></returns>
-        string Select();
+        string Say();
     }
 }
