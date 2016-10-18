@@ -11,7 +11,8 @@ namespace Demo.WebSites
 {
     public class JcNet : BaseOperation
     {
-        public const string URL = "http://www.jc.net.cn/jsp/front/regist_detail.jsp?register_type=3";
+       // public const string URL = "http://www.jc.net.cn/jsp/front/regist_detail.jsp?register_type=3";
+        public const string URL = "http://www.cnblogs.com/flyfish2012/p/3779810.html";
 
 
         /// <summary>

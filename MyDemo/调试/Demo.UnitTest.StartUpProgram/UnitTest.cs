@@ -12,9 +12,9 @@ namespace Demo.UnitTest.StartUpProgram
         [TestMethod]
         public void TestMethod1()
         {
-            MySqlSugarDemo mySqlSugar=new MySqlSugarDemo();
-            mySqlSugar.Set();
-            Assert.IsTrue(true);
+            //MySqlSugarDemo mySqlSugar=new MySqlSugarDemo();
+            //mySqlSugar.Set();
+            //Assert.IsTrue(true);
         }
 
       

@@ -17,7 +17,7 @@ namespace Demo.Test.Greetest
     /// </summary>
     public class BreakCode : BaseOperation
     {
-        public static int GetPositionX()
+        private static int GetPositionX()
         {
             try
             {
@@ -77,10 +77,10 @@ namespace Demo.Test.Greetest
                                                         var normal = [[1, 0], [2, 0], [1, -1]];//合理距离波动范围
                                                         var abnormal = [4, 6];//异常距离波动范围,用于开头
 
-                                                        var startTime = [20, 30];// 开始拖动阶段时间波动范围,约占5%
-                                                        var middleTime = [3, 10];//中间拖动阶段时间波动范围,约占85%
-                                                        var endTime = [50, 80];//结束拖动阶段时间波动范围,约占10%
-                                                        var overTime = [150, 250];//最后一像素
+                                                        var startTime = [5, 8];// 开始拖动阶段时间波动范围,约占5%
+                                                        var middleTime = [1, 2];//中间拖动阶段时间波动范围,约占85%
+                                                        var endTime = [20, 40];//结束拖动阶段时间波动范围,约占10%
+                                                        var overTime = [50, 70];//最后一像素
                                                         var cachX = nowX;
                                                         var cachY = nowY;
                                                         var abnor= parseInt(Math.random() * 9) + 1;
@@ -107,7 +107,7 @@ namespace Demo.Test.Greetest
                                                                     else if (i === count - 1) {
                                                                         wavetime = overTime;
                                                                     }
-                                                                    else if (i>(count-4)&&i!== count) {
+                                                                    else if (i>(count-3)&&i!== count) {
                                                                         wavetime = endTime;
                                                                     } else {
                                                                         wavetime = middleTime;
@@ -142,10 +142,9 @@ namespace Demo.Test.Greetest
                                                         nowY = trailArray[loopRec][1];
                                                         obj.dispatchEvent(createEvent('mousemove', nowX, nowY));
                                                         if (trailArray.length <= loopRec + 1) {
-                                                            var b = parseInt(Math.random() * 2);
-                                                            obj.dispatchEvent(createEvent('mousemove', startX + delta + b, nowY));
-                                                            obj.dispatchEvent(createEvent('mouseup', startX + delta + b, nowY));
-                                                            console.log('需要位移:' + delta + '起点随机数:' + a + '---终点随机数:' + b + '---终点随机时间:' + trailArray[loopRec][2]);
+                                                            var b = parseInt(Math.random() * 1);
+                                                            obj.dispatchEvent(createEvent('mousemove', startX + delta, nowY));
+                                                            obj.dispatchEvent(createEvent('mouseup', startX + delta, nowY));
                                                         } else {
                                                             moveToTarget(loopRec+1);
                                                         }
