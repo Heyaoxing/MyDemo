@@ -152,6 +152,35 @@ namespace Demo.Common.GeckoFxHelper
         }
 
         /// <summary>
+        /// 获取元素特性值
+        /// </summary>
+        /// <param name="dom"></param>
+        /// <param name="className"></param>
+        /// <param name="attrElement"></param>
+        /// <returns></returns>
+        public string GetDomAttrByClassLast(GeckoEnum.HtmlDom dom, string className, string attrElement)
+        {
+            string attribute = string.Empty;
+            var classes = _geckoWebBrowser.Document.GetElementsByClassName(className);
+            using (var documents = _geckoWebBrowser.Document.GetElementsByClassName(className)[classes.Length-1])
+            {
+                GeckoHtmlElement element = null;
+                switch (dom)
+                {
+                    case GeckoEnum.HtmlDom.Div:
+                        element = new GeckoDivElement(documents.DomObject);
+                        break;
+                }
+
+                if (element != null)
+                {
+                    attribute = element.GetAttribute(attrElement);
+                }
+            }
+            return attribute;
+        }
+
+        /// <summary>
         /// 向页面中添加内容（样式、脚本等）
         /// </summary>
         /// <param name="content">要添加的内容</param>
