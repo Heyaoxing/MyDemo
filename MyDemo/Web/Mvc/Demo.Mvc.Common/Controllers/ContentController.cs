@@ -19,6 +19,7 @@ namespace Demo.Mvc.Common.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = _companyReposity.Say();
+            ViewBag.CurrentTime = DateTime.Now;
             return View();
         }
 	}

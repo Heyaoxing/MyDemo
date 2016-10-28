@@ -18,8 +18,6 @@ namespace Demo.Mvc.Services
         }
         public string Say()
         {
-            _companyResitory.Select();
-            _companyResitory.Select();
             return _companyResitory.Select();
         }
 
