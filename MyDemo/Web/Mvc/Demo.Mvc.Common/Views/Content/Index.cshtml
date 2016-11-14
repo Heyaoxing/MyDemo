@@ -1,9 +1,104 @@
-﻿
-@{
+﻿@{
+    Layout = null;
     ViewBag.Title = "Index";
 }
+<table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Descript</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 
-<h2>@ViewBag.Message </h2>
-<h2>@ViewBag.CurrentTime </h2>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/jquery")
+<script>
+    @*$(function () {
+        $(document).ready(function () {
+            $('#example').dataTable({
+                "processing": true,
+                "serverSide": true,
+                "bFilter": false,
+                "ajax": {
+                    "type": "POST",
+                    "url": '@Url.Action("GetList")',
+                    "data": {draw:2}
+                },
+                "columns": [
+                      { "data": "Id" },
+                      { "data": "Name" },
+                      { "data": "Descript" }
+                ],
+                "oLanguage": {
+                    "sLengthMenu": "每页显示 _MENU_ 条记录",
+                    "sZeroRecords": "对不起，查询不到任何相关数据",
+                    "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+                    "sInfoEmtpy": "找不到相关数据",
+                    "sInfoFiltered": "数据表中共为 _MAX_ 条记录)",
+                    "sProcessing": "正在加载中...",
+                    "sSearch": "搜索",
+                    "sUrl": "", //多语言配置文件，可将oLanguage的设置放在一个txt文件中，例：Javascript/datatable/dtCH.txt
+                    "oPaginate": {
+                        "sFirst": "第一页",
+                        "sPrevious": " 上一页 ",
+                        "sNext": " 下一页 ",
+                        "sLast": " 最后一页 "
+                    }
+                }, //多语言配置
+            });
+        });
+    });*@
 
-@Bootstrap.Label("hello", "Bootstrap Label标签", null, null)
+
+
+    $(function () {
+        $(document).ready(function () {
+            $('#example').dataTable({
+                "processing": true,
+                "serverSide": true,
+                "bFilter": false,
+                "columns": [
+                      { "data": "Id" },
+                      { "data": "Name" },
+                      { "data": "Descript" }
+                ],
+                "sAjaxSource": "@Url.Action("GetList")",
+                "fnServerData": retrieveData,
+                "oLanguage": {
+                    "sLengthMenu": "每页显示 _MENU_ 条记录",
+                    "sZeroRecords": "对不起，查询不到任何相关数据",
+                    "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+                    "sInfoEmtpy": "找不到相关数据",
+                    "sInfoFiltered": "数据表中共为 _MAX_ 条记录)",
+                    "sProcessing": "正在加载中...",
+                    "sSearch": "搜索",
+                    "sUrl": "", //多语言配置文件，可将oLanguage的设置放在一个txt文件中，例：Javascript/datatable/dtCH.txt
+                    "oPaginate": {
+                        "sFirst": "第一页",
+                        "sPrevious": " 上一页 ",
+                        "sNext": " 下一页 ",
+                        "sLast": " 最后一页 "
+                    }
+                }, //多语言配置
+            });
+        });
+    });
+
+    function retrieveData(sSource, aoData, fnCallback) {
+        console.log(sSource);
+        console.log(JSON.stringify(aoData));
+        $.ajax({
+            "type": "POST",
+            "contentType": "application/json",
+            "url": sSource,
+            "dataType": "json",
+            "data": JSON.stringify(aoData), //以json格式传递  
+            "success": function (resp) {
+                fnCallback(resp); //服务器端返回的对象的returnObject部分是要求的格式  
+            }
+        });
+    }
+</script>

@@ -17,13 +17,13 @@ namespace Demo.Mvc.Common.Extensions
         private void ContextOnEndRequest(object sender, EventArgs eventArgs)
         {
             var app = (HttpApplication)sender;
-            app.Context.Response.Write("执行ip过滤开始");
+          //  app.Context.Response.Write("执行ip过滤开始");
         }
 
         void context_BeginRequest(object sender, EventArgs e)
         {
             var app = (HttpApplication)sender;
-            app.Context.Response.Write("执行ip过滤结束");
+          //  app.Context.Response.Write("执行ip过滤结束");
         }
 
         public void Dispose()

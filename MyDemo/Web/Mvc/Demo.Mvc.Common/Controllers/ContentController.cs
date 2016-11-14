@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Demo.Mvc.Services;
+using Demo.Mvc.Common.Models;
 
 namespace Demo.Mvc.Common.Controllers
 {
     public class ContentController : Controller
     {
-           public ICompanyService _companyReposity;
-           public ContentController(ICompanyService companyReposity)
+        public ICompanyService _companyReposity;
+        public ContentController(ICompanyService companyReposity)
         {
             _companyReposity = companyReposity;
         }
@@ -18,9 +19,49 @@ namespace Demo.Mvc.Common.Controllers
         // GET: /Content/
         public ActionResult Index()
         {
-            ViewBag.Message = _companyReposity.Say();
-            ViewBag.CurrentTime = DateTime.Now;
             return View();
         }
-	}
+
+        public ActionResult GetList(JsonParameter[] param)
+        {
+            List<Customer> data = new List<Customer>();
+            data.Add(new Customer()
+            {
+                Id = 1,
+                Name = "我是谁",
+                Descript = "不可描述"
+            });
+            data.Add(new Customer()
+            {
+                Id = 2,
+                Name = "我是谁",
+                Descript = "不可描述"
+            });
+            data.Add(new Customer()
+            {
+                Id = 3,
+                Name = "我是谁",
+                Descript = "不可描述"
+            });
+            for (int i = 0; i < 20; i++)
+            {
+                data.Add(new Customer()
+                {
+                    Id = i + 3,
+                    Name = "我是谁",
+                    Descript = "不可描述"
+                });
+            }
+
+            DTResult<Customer> result = new DTResult<Customer>
+            {
+                draw =1,
+                data = data,
+                recordsFiltered = data.Count,
+                recordsTotal = data.Count
+            };
+
+            return Json(result);
+        }
+    }
 }
