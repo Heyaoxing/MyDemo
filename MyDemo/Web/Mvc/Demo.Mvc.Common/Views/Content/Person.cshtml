@@ -1,0 +1,23 @@
+﻿@using Demo.Mvc.Common.Models
+@using Webdiyer.WebControls.Mvc
+@model  Webdiyer.WebControls.Mvc.PagedList<Demo.Mvc.Common.Models.Customer> 
+@{
+    ViewBag.Title = "Person";
+}
+
+<h2>Person</h2>
+<table class="table">
+    @foreach (var info in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(model => info.Id)</td>
+            <td>@Html.DisplayFor(model => info.Name)</td>
+            <td>@Html.DisplayFor(model => info.Descript)</td>
+        </tr>
+    }
+</table>
+<div class="text-center">
+    <nav>
+        @Html.Pager(Model,  new PagerOptions())
+    </nav>
+</div>

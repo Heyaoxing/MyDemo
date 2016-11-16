@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Demo.Mvc.Services;
 using Demo.Mvc.Common.Models;
+using Webdiyer.WebControls.Mvc;
 
 namespace Demo.Mvc.Common.Controllers
 {
@@ -23,6 +24,38 @@ namespace Demo.Mvc.Common.Controllers
         }
 
         public ActionResult GetList(JsonParameter[] param)
+        {
+            List<Customer> data = Bind();
+            DTResult<Customer> result = new DTResult<Customer>
+            {
+                draw =1,
+                data = data,
+                recordsFiltered = data.Count,
+                recordsTotal = data.Count
+            };
+
+            return Json(result);
+        }
+
+
+        /// <summary>
+        /// 分页控件
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Person(int pageindex = 1)
+        {
+            List<Customer> data = Bind();
+            PagedList<Customer> InfoPager = data.AsQueryable().ToPagedList(pageindex, 2);
+            InfoPager.TotalItemCount = data.Count;
+            InfoPager.CurrentPageIndex = pageindex;
+            return View(InfoPager);
+        }
+
+
+
+
+
+        private List<Customer> Bind()
         {
             List<Customer> data = new List<Customer>();
             data.Add(new Customer()
@@ -53,15 +86,7 @@ namespace Demo.Mvc.Common.Controllers
                 });
             }
 
-            DTResult<Customer> result = new DTResult<Customer>
-            {
-                draw =1,
-                data = data,
-                recordsFiltered = data.Count,
-                recordsTotal = data.Count
-            };
-
-            return Json(result);
+            return data;
         }
     }
 }

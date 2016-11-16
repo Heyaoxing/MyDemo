@@ -391,6 +391,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Content\Index.cshtml" />
+    <Content Include="Views\Content\Person.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -406,6 +407,10 @@
     <ProjectReference Include="..\..\Common\Demo.Mvc.Common\Demo.Mvc.Dll\Demo.Mvc.Dll.csproj">
       <Project>{E69290A5-5449-4F54-8EAE-4CF3510C9812}</Project>
       <Name>Demo.Mvc.Dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Webdiyer.WebControls.Mvc\Webdiyer.WebControls.Mvc.csproj">
+      <Project>{e727825d-f06e-4c69-978f-154770835ee9}</Project>
+      <Name>Webdiyer.WebControls.Mvc</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Data\Demo.Mvc.Data\Demo.Mvc.Data.csproj">
       <Project>{0F9B2097-80BB-4A36-8CFE-50606A04329D}</Project>
