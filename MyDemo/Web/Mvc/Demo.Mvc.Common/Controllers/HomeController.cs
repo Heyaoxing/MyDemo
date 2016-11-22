@@ -17,7 +17,6 @@ namespace Demo.Mvc.Common.Controllers
             ViewBag.Message = _companyReposity.SayHello();
             return View();
         }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
