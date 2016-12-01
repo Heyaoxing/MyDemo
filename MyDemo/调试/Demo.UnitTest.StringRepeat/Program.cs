@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,9 +9,9 @@ using Demo.Word.JieBaWord;
 using Shove.WordSplit;
 using System.Net;
 using System.IO;
-using Demo.Infrastructure;
-using System.Drawing;
-using System.Drawing.Imaging;
+using Demo.Class.Log4Net;
+using log4net;
+using log4net.Config;
 
 namespace Demo.UnitTest.StringRepeat
 {
@@ -20,18 +21,9 @@ namespace Demo.UnitTest.StringRepeat
         {
             try
             {
-                string alertMsg = "发布--产品s";
-                MemoryStream mstream = new MemoryStream();
-
-                Font strFont = new Font("Courier New", 14);
-                Image newBitmap = new Bitmap(400, 100, PixelFormat.Format32bppArgb);
-                Graphics g = Graphics.FromImage(newBitmap);
-                g.FillRectangle(new SolidBrush(Color.FromArgb(255, 200, 200, 200)), new Rectangle(0, 0, 400, 100));
-                g.DrawString("这个是demo", strFont, new SolidBrush(Color.Green), 10, 10);
-                newBitmap.Save(mstream, ImageFormat.Jpeg);
-
-                DrawHelper.ImageWaterMarkText(newBitmap, DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg", alertMsg, 1, 100, "Courier New",14);
-                Console.WriteLine("成功");
+                Log.Debug("测试咯");
+                Log.Info("测试咯");
+                Log.Error("测试咯");
             }
             catch (Exception ex)
             {
@@ -39,6 +31,44 @@ namespace Demo.UnitTest.StringRepeat
             }
             Console.Read();
 
+        }
+
+        private static void write()
+        {
+            InitLog4Net();
+            var logger = LogManager.GetLogger(typeof(Program));
+            logger.Info(GetSrc(new StackTrace()) + "消息");
+            logger.Warn(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType+"警告");
+            logger.Error("异常");
+            logger.Fatal("错误");
+            logger.Info(logger.IsDebugEnabled);
+            logger.Info(logger.IsErrorEnabled);
+            logger.Info(logger.IsFatalEnabled);
+            logger.Info(logger.IsInfoEnabled);
+            logger.Info(logger.IsInfoEnabled);
+        }
+
+        private const string SRC = " {0}.{1}: ";
+
+        private static string GetSrc(StackTrace trace)
+        {
+            if (trace != null)
+            {
+                var methodBase = trace.GetFrame(1).GetMethod();
+                if (methodBase != null)
+                {
+                    string src = string.Format(SRC, methodBase.DeclaringType.FullName, methodBase.Name);
+                    return src;
+                }
+            }
+            return null;
+        }
+
+        private static void InitLog4Net()
+        {
+            //  var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
+            //    XmlConfigurator.ConfigureAndWatch(logCfg);
+            XmlConfigurator.Configure();
         }
 
 
@@ -70,7 +100,7 @@ namespace Demo.UnitTest.StringRepeat
         {
             try
             {
-               
+
 
             }
             catch { }
@@ -129,7 +159,7 @@ namespace Demo.UnitTest.StringRepeat
 
                 foreach (var splitWord in splitWords)
                 {
-                     if (Regex.Matches(_title, splitWord).Count >1)
+                    if (Regex.Matches(_title, splitWord).Count > 1)
                     {
                         int index = _title.IndexOf(splitWord);
                         _title = _title.Replace(splitWord, "").Insert(index, splitWord);
