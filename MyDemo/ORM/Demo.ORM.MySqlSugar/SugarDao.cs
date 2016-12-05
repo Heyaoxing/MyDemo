@@ -19,18 +19,18 @@ namespace Demo.ORM.MySqlSugar
         {
             var reval = new SqlSugarClient(connection);
             //设置流水号
-            reval.SetSerialNumber(_nums);
+            //reval.SetSerialNumber(_nums);
             return reval;
         }
 
-        /// <summary>
-        /// 页面所需要的过滤函数
-        /// </summary>
-        private static List<PubModel.SerialNumber> _nums = new List<PubModel.SerialNumber>(){
-              new PubModel.SerialNumber(){TableName="t_primary_websites", FieldName="WebSite_Url", GetNumFunc=()=>{
-                  return "stud-"+DateTime.Now.ToString("yyyy-MM-dd");
-              }}
-            };
+        ///// <summary>
+        ///// 页面所需要的过滤函数
+        ///// </summary>
+        //private static List<PubModel.SerialNumber> _nums = new List<PubModel.SerialNumber>(){
+        //      new PubModel.SerialNumber(){TableName="t_primary_websites", FieldName="WebSite_Url", GetNumFunc=()=>{
+        //          return "stud-"+DateTime.Now.ToString("yyyy-MM-dd");
+        //      }}
+        //    };
 
     }
 }

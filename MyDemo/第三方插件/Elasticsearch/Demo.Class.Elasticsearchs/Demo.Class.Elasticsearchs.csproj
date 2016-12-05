@@ -4,18 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D40CDD2B-5AEA-44FC-BA53-F576DE24E7A0}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{8BD5B7D4-43D1-4F07-9E20-86C747C263BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Demo.UnitTest.StringRepeat</RootNamespace>
-    <AssemblyName>Demo.UnitTest.StringRepeat</AssemblyName>
+    <RootNamespace>Demo.Class.Elasticsearchs</RootNamespace>
+    <AssemblyName>Demo.Class.Elasticsearchs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,34 +33,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Elasticsearch.Net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Elasticsearch.Net.2.5.0\lib\net45\Elasticsearch.Net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\packages\MySql.Data.6.2.1\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySqlSugar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\mySqlSugar.1.0.0.1\lib\net40\MySqlSugar.dll</HintPath>
+      <HintPath>..\..\..\packages\Elasticsearch.Net.2.5.0\lib\net45\Elasticsearch.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Nest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NEST.2.5.0\lib\net45\Nest.dll</HintPath>
+      <HintPath>..\..\..\packages\NEST.2.5.0\lib\net45\Nest.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="Shove">
-      <HintPath>..\..\Libs\Shove.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,35 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Convert.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="ElasticClientBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="t_synth_title_list.cs" />
+    <Compile Include="TrackInfo.cs" />
+    <Compile Include="TrackInfoIndex.cs" />
+    <Compile Include="TrackingInfoService.cs" />
+    <Compile Include="TrackingStatusEnum.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Net编程\Demo.Net.Infrastructure\Demo.Infrastructure.csproj">
-      <Project>{9386ed52-ad9d-40ca-ae05-96915df20557}</Project>
-      <Name>Demo.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\ORM\Demo.ORM.MySqlSugar\Demo.ORM.MySqlSugar.csproj">
-      <Project>{cf04e7a1-0767-430c-a329-9c54cb5c4b16}</Project>
-      <Name>Demo.ORM.MySqlSugar</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\第三方插件\Demo.Word.JieBaWord\Demo.Word.JieBaWord.csproj">
-      <Project>{23d00db9-79e1-42ab-a4b2-c948592655c3}</Project>
-      <Name>Demo.Word.JieBaWord</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\第三方插件\Elasticsearch\Demo.Class.Elasticsearchs\Demo.Class.Elasticsearchs.csproj">
-      <Project>{8bd5b7d4-43d1-4f07-9e20-86c747c263bf}</Project>
-      <Name>Demo.Class.Elasticsearchs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\第三方插件\Log4Net\Demo.Class.Log4Net\Demo.Class.Log4Net.csproj">
-      <Project>{4fbb8841-bf9b-408e-b9d4-6dc6f066ca1b}</Project>
-      <Name>Demo.Class.Log4Net</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

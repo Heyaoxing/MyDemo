@@ -9,7 +9,9 @@ using Demo.Word.JieBaWord;
 using Shove.WordSplit;
 using System.Net;
 using System.IO;
+using Demo.Class.Elasticsearchs;
 using Demo.Class.Log4Net;
+using Demo.ORM.MySqlSugar;
 using log4net;
 using log4net.Config;
 
@@ -21,9 +23,32 @@ namespace Demo.UnitTest.StringRepeat
         {
             try
             {
-                Log.Debug("测试咯");
-                Log.Info("测试咯");
-                Log.Error("测试咯");
+                ElasticClientBase elasticClient = new CustomerService();
+                var _elasticClient = elasticClient.GetClient("articles");
+                using (var db = SugarDao.GetInstance())
+                {
+                    int pageIndex = 1;
+                    int pageSize =20;
+                    int count = db.GetInt("select count(1) from t_synth_title_list");
+                    Console.WriteLine("总共需要插入到es库有:" + count);
+                    Stopwatch watch = new Stopwatch();
+                    while (count > (pageIndex * pageSize))
+                    {
+                        watch.Start();
+                        var list = db.SqlQuery<t_synth_title_list>("select id,content from t_synth_title_list").Skip((pageIndex - 1) * pageSize).Take(pageSize);
+                        if (list != null && list.Any())
+                        {
+                            foreach (var item in list)
+                            {
+                                _elasticClient.Index(item);
+                            }
+                        }
+                        watch.Stop();
+                        Console.WriteLine(string.Format("完成插入到es库共:{0},用时:{1}", list.Count(), watch.Elapsed.Seconds));
+                        watch.Reset();
+                        pageIndex++;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -38,7 +63,7 @@ namespace Demo.UnitTest.StringRepeat
             InitLog4Net();
             var logger = LogManager.GetLogger(typeof(Program));
             logger.Info(GetSrc(new StackTrace()) + "消息");
-            logger.Warn(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType+"警告");
+            logger.Warn(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType + "警告");
             logger.Error("异常");
             logger.Fatal("错误");
             logger.Info(logger.IsDebugEnabled);
