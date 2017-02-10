@@ -36,9 +36,8 @@ namespace Demo.Console.Hangfires
             catch (Exception exception)
             {
                 System.Console.WriteLine(exception);
+                System.Console.Read();
             }
-           
-            System.Console.Read();
         }
 
     }
