@@ -34,7 +34,7 @@ namespace Hangfire.Redis.Tests
 						catch (Exception ex)
 						{
 							lastError = ExceptionDispatchInfo.Capture(ex);
-							Console.WriteLine(ex.Message);
+                            System.Console.WriteLine(ex.Message);
 							Thread.Sleep(10);
 						}
 					}

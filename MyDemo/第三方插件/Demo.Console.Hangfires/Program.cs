@@ -8,6 +8,7 @@ using Demo.Hangfire.Jobs;
 using Hangfire;
 using Hangfire.Redis;
 using Hangfire.Redis.Tests;
+using Hangfire.Server;
 using Hangfire.SqlServer;
 using StackExchange.Redis;
 
@@ -21,8 +22,9 @@ namespace Demo.Console.Hangfires
             {
 
                 GlobalConfiguration.Configuration
-              .UseColouredConsoleLogProvider()
-              .UseRedisStorage(RedisUtils.GetHostAndPort());
+                .UseColouredConsoleLogProvider()
+                .UseRedisStorage(RedisUtils.GetHostAndPort());
+
 
                 //然后需要推送的时候，调用下面的方法即可
                 BackgroundJob.Enqueue(() => JobClient.Send("hello"));

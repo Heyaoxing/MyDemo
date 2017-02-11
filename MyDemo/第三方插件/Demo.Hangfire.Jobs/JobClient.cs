@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Hangfire.Console;
+using Hangfire.Server;
 
 namespace Demo.Hangfire.Jobs
 {
@@ -16,9 +18,11 @@ namespace Demo.Hangfire.Jobs
         /// </summary>
         /// <param name="message"></param>
         [DisplayName("这里可以注明job名称,方便查看")]
-        public static void Send(string message)
+        public static void Send(PerformContext context,string message)
         {
             System.Console.WriteLine(DateTime.Now + "开始执行任务");
+            var progressBar = context.WriteProgressBar();
+            Enumerable.Range(1, 50).ToList().WithProgress(progressBar);
             for (int i = 0; i < 60; i++)
             {
                 Thread.Sleep(1000);

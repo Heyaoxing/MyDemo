@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Hangfire;
+using Hangfire.Console;
 using Hangfire.Redis.Tests;
 using log4net.Repository.Hierarchy;
 using Microsoft.Owin;
@@ -15,12 +16,19 @@ namespace Demo.Mvc.Common
         public void Configuration(IAppBuilder app)
         {
             // 有关如何配置应用程序的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=316888
-            GlobalConfiguration.Configuration.UseRedisStorage(RedisUtils.GetHostAndPort());
+            GlobalConfiguration.Configuration.UseRedisStorage(RedisUtils.GetHostAndPort()).UseConsole(); ;
 
 
             app.UseHangfireDashboard();
           //  app.UseHangfireDashboard("/jobs");   //指定访问路径
-            app.UseHangfireServer();
+       //     app.UseHangfireServer();
+
+            //app.UseHangfireServer(new BackgroundJobServerOptions
+            //{
+            //    ServerName="监控端",
+            //    WorkerCount =1
+            //});
         }
+
     }
 }
