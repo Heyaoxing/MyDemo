@@ -27,8 +27,7 @@ namespace Demo.Console.Hangfires
 
 
                 //然后需要推送的时候，调用下面的方法即可
-                BackgroundJob.Enqueue(() => JobClient.Send("hello"));
-
+                BackgroundJob.Enqueue(() => JobClient.Send(PerformContextToken.Null, "hello"));
 
 
                 //JobStorage.Current = new RedisStorage(RedisUtils.GetHostAndPort());
@@ -41,6 +40,5 @@ namespace Demo.Console.Hangfires
                 System.Console.Read();
             }
         }
-
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Hangfire;
 using Hangfire.Redis;
 using Hangfire.Redis.Tests;
+using Hangfire.Server;
 using Microsoft.Owin.Builder;
 using Owin;
 
@@ -13,11 +14,17 @@ namespace Demo.Console.Hangfires.server
 {
     class Program
     {
+      
+
         static void Main(string[] args)
         {
+           
+
             try
             {
                 JobStorage.Current = new RedisStorage(RedisUtils.GetHostAndPort());
+
+         
                 BackgroundJobServer _server = new BackgroundJobServer(new BackgroundJobServerOptions()
                 {
                     ServerName = "Console端",

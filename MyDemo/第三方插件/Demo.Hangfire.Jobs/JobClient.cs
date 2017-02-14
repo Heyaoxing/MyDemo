@@ -22,13 +22,17 @@ namespace Demo.Hangfire.Jobs
         {
             System.Console.WriteLine(DateTime.Now + "开始执行任务");
             var progressBar = context.WriteProgressBar();
-            Enumerable.Range(1, 50).ToList().WithProgress(progressBar);
-            for (int i = 0; i < 60; i++)
+            context.SetTextColor(ConsoleTextColor.Red);
+            for (int i = 0; i < 100; i++)
             {
+                progressBar.SetValue(i);
                 Thread.Sleep(1000);
-                Console.WriteLine("运行时间为:" + DateTime.Now);
+                Console.WriteLine(context+"运行时间为:" + DateTime.Now);
             }
             System.Console.WriteLine(DateTime.Now + "这是由Hangfire后台任务发送的消息:" + message);
         }
+
+       
+
     }
 }

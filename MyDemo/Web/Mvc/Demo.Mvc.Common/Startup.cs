@@ -25,10 +25,9 @@ namespace Demo.Mvc.Common
 
             //app.UseHangfireServer(new BackgroundJobServerOptions
             //{
-            //    ServerName="监控端",
-            //    WorkerCount =1
+            //    ServerName = "监控端",
+            //    WorkerCount = 10
             //});
         }
-
     }
 }
