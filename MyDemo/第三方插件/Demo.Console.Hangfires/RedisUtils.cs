@@ -11,7 +11,7 @@ namespace Hangfire.Redis.Tests
         private const string PortVariable = "Hangfire_Redis_Port";
         private const string DbVariable = "Hangfire_Redis_Db";
 
-        private const string DefaultHost = "127.0.0.1";
+        private const string DefaultHost = "192.168.4.126";
         private const int DefaultPort = 6379;
         private const int DefaultDb = 1;
 		static Lazy<ConnectionMultiplexer> connection = null;

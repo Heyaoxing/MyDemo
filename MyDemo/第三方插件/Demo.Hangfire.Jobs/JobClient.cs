@@ -23,7 +23,7 @@ namespace Demo.Hangfire.Jobs
             System.Console.WriteLine(DateTime.Now + "开始执行任务");
             var progressBar = context.WriteProgressBar();
             context.SetTextColor(ConsoleTextColor.Red);
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 progressBar.SetValue(i);
                 Thread.Sleep(1000);

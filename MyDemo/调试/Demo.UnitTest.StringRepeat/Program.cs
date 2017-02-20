@@ -24,32 +24,32 @@ namespace Demo.UnitTest.StringRepeat
             try
             {
 
-                List<t_synth_title_list> list = new List<t_synth_title_list>();
-                list.Add(new t_synth_title_list()
-                {
-                    id = 1,
-                    content = "hello"
-                });
-                list.Add(new t_synth_title_list()
-                {
-                    id = 2,
-                    content = "word"
-                });
+                //List<t_synth_title_list> list = new List<t_synth_title_list>();
+                //list.Add(new t_synth_title_list()
+                //{
+                //    id = 1,
+                //    content = "hello"
+                //});
+                //list.Add(new t_synth_title_list()
+                //{
+                //    id = 2,
+                //    content = "word"
+                //});
 
-                foreach (var item in list)
-                {
-                    if (item.id == 1)
-                        list.Remove(item);
+                //foreach (var item in list)
+                //{
+                //    if (item.id == 1)
+                //        list.Remove(item);
 
-                    item.id = 21;
-                    item.content = "das";
-                }
+                //    item.id = 21;
+                //    item.content = "das";
+                //}
 
-                foreach (var tSynthTitleList in list)
-                {
-                    Console.WriteLine(tSynthTitleList.id);
-                    Console.WriteLine(tSynthTitleList.content);
-                }
+                //foreach (var tSynthTitleList in list)
+                //{
+                //    Console.WriteLine(tSynthTitleList.id);
+                //    Console.WriteLine(tSynthTitleList.content);
+                //}
 
                 //ElasticClientBase elasticClient = new CustomerService();
                 //var _elasticClient = elasticClient.GetClient("articles");
@@ -77,6 +77,10 @@ namespace Demo.UnitTest.StringRepeat
                 //        pageIndex++;
                 //    }
                 //}
+
+
+                Console.WriteLine(GetInternalIP());
+
             }
             catch (Exception ex)
             {
@@ -85,6 +89,7 @@ namespace Demo.UnitTest.StringRepeat
             Console.Read();
 
         }
+      
 
         private static void write()
         {

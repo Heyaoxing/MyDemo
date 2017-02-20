@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Demo.Hangfire.Jobs;
 using Hangfire;
 using Hangfire.Redis;
+using Hangfire.MySql;
 using Hangfire.Redis.Tests;
 using Hangfire.Server;
 using Hangfire.SqlServer;
@@ -33,6 +34,8 @@ namespace Demo.Console.Hangfires
                 //JobStorage.Current = new RedisStorage(RedisUtils.GetHostAndPort());
                 //BackgroundJobServer _server = new BackgroundJobServer();
                 //_server.Start();
+
+
             }
             catch (Exception exception)
             {
