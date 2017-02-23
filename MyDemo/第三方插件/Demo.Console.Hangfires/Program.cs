@@ -35,7 +35,6 @@ namespace Demo.Console.Hangfires
                 //BackgroundJobServer _server = new BackgroundJobServer();
                 //_server.Start();
 
-
             }
             catch (Exception exception)
             {

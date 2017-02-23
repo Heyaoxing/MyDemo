@@ -33,6 +33,7 @@ namespace Demo.Console.Hangfires.server
                     WorkerCount = 1
                 });
 
+               
             }
             catch (Exception exception)
             {
